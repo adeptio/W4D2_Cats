@@ -1,0 +1,27 @@
+<h1> Create a new Cat </h1>
+
+<form action='create' method='post'>
+
+  <label for="birth_date">Birthday</label>
+  <input id="birth_date" type="date" name="cat[birth_date]" value="<%= cat.birth_date %>">
+
+  <label for="color">Color</label>
+  <select id="color" name="cat[color]">
+    <option disabled selected> -- Please Select -- </option>
+    <% COLORS.each do |color| %>
+      <option value= '<%= color %>' > <%= color %> </option>
+    <% end %>
+  </select>
+
+  <label for="name">Name</label>
+  <input id="birth_date" type="text" name="cat[name]" value="<%= cat.name %>">
+
+  <label for="sex">Sex</label>
+  <input type="radio" name="cat[sex]" value="<%= cat.sex %>">M<br>
+  <input type="radio" name="cat[sex]" value="<%= cat.sex %>">F<br>
+
+  <label for="description">Description</label>
+  <textarea>Describe cat here</textarea>
+
+  <input type="submit" value="Let's make a cat, shall we?">
+</form>
