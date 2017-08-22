@@ -1,3 +1,5 @@
+require 'byebug'
+
 class CatsController < ApplicationController
   def index
     @cats = Cat.all
@@ -14,6 +16,20 @@ class CatsController < ApplicationController
     end
   end
 
+  def new
+    @cat = Cat.new
+    render :new
+  end
+
+  def create
+    @cat = Cat.new(cat_params)
+    # debugger
+    if @cat.save
+      redirect_to cat_url(@cat)
+    else
+      render :new
+    end
+  end
 
   private
 

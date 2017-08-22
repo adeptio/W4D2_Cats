@@ -1,11 +1,12 @@
 require 'date'
 
-class Cat < ApplicationRecord
-  COLORS = [:black, :white, :brown, :orange, :grey]
 
-  validates :birth_date, :color, :name, :sex, presence: true
+class Cat < ApplicationRecord
+  COLORS = ["black", "white", "brown", "orange", "grey"]
+
   validates :color, inclusion: { in: COLORS, message: "Invalid color" }
-  validates :sex, inclusion: { in: ['M', 'F'] }
+  validates :sex, inclusion: ['M', 'F']
+  validates :birth_date, :color, :name, :sex, presence: true
 
   def age
     end_date = Date.today
@@ -15,5 +16,5 @@ class Cat < ApplicationRecord
     age
   end
 
-  
+
 end
