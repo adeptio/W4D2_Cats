@@ -8,7 +8,6 @@ class CatsController < ApplicationController
 
   def show
     @cat = Cat.find_by(id: params[:id])
-
     if @cat
       render :show
     else
@@ -23,7 +22,6 @@ class CatsController < ApplicationController
 
   def create
     @cat = Cat.new(cat_params)
-    # debugger
     if @cat.save
       redirect_to cat_url(@cat)
     else

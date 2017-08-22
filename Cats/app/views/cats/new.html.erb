@@ -1,27 +1,3 @@
 <h1> Create a new Cat </h1>
 
-<form action='/cats' method='post'>
-
-  <label for="birth_date">Birthday</label>
-  <input id="birth_date" type="date" name="cat[birth_date]" value="<%= @cat.birth_date %>">
-
-  <label for="color">Color</label>
-  <select id="color" name="cat[color]">
-    <option disabled selected> -- Please Select -- </option>
-    <% Cat::COLORS.each do |color| %>
-      <option value= '<%= color %>' > <%= color %> </option>
-    <% end %>
-  </select>
-
-  <label for="name">Name</label>
-  <input id="birth_date" type="text" name="cat[name]" value="<%= @cat.name %>">
-
-  <label for="sex">Sex</label>
-  <input type="radio" name="cat[sex]" value="M" checked>Male<br>
-  <input type="radio" name="cat[sex]" value="F">Female<br>
-
-  <label for="description">Description</label>
-  <textarea name="cat[description]">Describe cat here</textarea>
-
-  <input type="submit" value="Let's make a cat, shall we?">
-</form>
+<%= render 'form', action: :new, cat: @cat %>

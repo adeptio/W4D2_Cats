@@ -1,6 +1,8 @@
-<h1> Create a new Cat </h1>
+<h1> Edit a cat </h1>
 
-<form action='create' method='post'>
+<%= render 'form', action: :edit, cat: @cat %>
+
+<!-- <form action='create' method='post'>
   <input type="hidden" name="_method" value="PATCH">
 
   <label for="birth_date">Birthday</label>
@@ -33,4 +35,4 @@
   <textarea><%= cat.description %></textarea>
 
   <input type="submit" value="Let's make a cat, shall we?">
-</form>
+</form> -->
