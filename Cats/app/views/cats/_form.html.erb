@@ -29,11 +29,11 @@
   <input id="birth_date" type="text" name="cat[name]" value="<%= cat.name %>">
 
   <label for="sex">Sex</label>
-  <input type="radio" '<% cat.sex == 'M' ? "checked" : ""%>' name="cat[sex]" value="M" >Male<br>
-  <input type="radio" '<% cat.sex == 'F' ? "checked" : ""%>' name="cat[sex]" value="F">Female<br>
+  <input type="radio"  name="cat[sex]" value="M" <%= cat.sex == "M" ? "checked" : ""%> >Male<br>
+  <input type="radio"  name="cat[sex]" value="F" <%= cat.sex == "F" ? "checked" : ""%> >Female<br>
 
   <label for="description">Description</label>
   <textarea name="cat[description]">Describe cat here</textarea>
 
-  <input type="submit" value= "<%= action == :edit ? 'Change a cat' : "Let's make a cat, shall we?"%>">
+  <input type="submit" value= <%= action == :edit ? 'Change a cat' : "Let's make a cat, shall we?"%>>
 </form>
